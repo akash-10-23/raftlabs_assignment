@@ -10,6 +10,7 @@ const Book = require("./models/book");
 const Magazine = require("./models/magazine");
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 // Connecting to MongoDB database
 mongoose.connect(process.env.MONGODB_URI, {
@@ -232,7 +233,7 @@ app.post("/addMagazine", async (req, res) => {
 
 
 // Starting backend server at local port 3000 (can be changed)
-app.listen(process.env.PORT || 3000, function() {
+app.listen(PORT, function() {
     console.log("Server started.");
 });
 
